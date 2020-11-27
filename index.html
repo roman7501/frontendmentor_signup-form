@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Frontend Mentor | Intro component with sign up form</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Learn to code by watching others</h1>
+        <p>
+          See how experienced developers solve problems in real-time. Watching scripted tutorials is great, but
+          understanding how developers think is invaluable.
+        </p>
+      </header>
+      <section class="inscription">
+        <a href="#" class="btn cta">Try it free 7 days <span>then $20/mo. thereafter</span> </a>
+        <div class="form">
+          <form action="submit">
+            <input type="text" name="firstname" id="firstname" placeholder="First Name" required />
+            <span class="notgood firstname-notgood">First Name cannot be empty</span>
+            <input type="text" name="lastname" placeholder="Last Name" id="lastname" required />
+            <span class="lastname-notgood notgood">Last Name cannot be empty</span>
+            <input type="email" name="email" id="email" placeholder="Email Adress" required />
+            <span class="email-notgood notgood">Look like this is not an email</span>
+            <input type="password" name="password" id="password" placeholder="Password" required />
+            <span class="password-notgood notgood">Password cannot be empty</span>
+            <button class="btn btn-primary" type="submit">Claim your free trial</button>
+          </form>
+          <p>By clicking the button, you are agreeing to our <span>Terms and Services</span></p>
+        </div>
+      </section>
+    </div>
+    <script>
+      const form = document.querySelector("form")[0];
+      const inputs = document.querySelectorAll("input");
+
+      function checkValue(e) {
+        const error = document.querySelector(`.${e.target.name}-notgood`);
+        const value = document.querySelector(`#${e.target.name}`);
+        if (value.validity.valid) {
+          error.style.display = "none";
+          e.target.classList.remove("input-problem");
+        } else {
+          error.style.display = "block";
+          e.target.classList.add("input-problem");
+        }
+      }
+
+      inputs.forEach((input) => {
+        input.addEventListener("input", (e) => checkValue(e));
+      });
+    </script>
+  </body>
+</html>

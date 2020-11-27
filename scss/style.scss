@@ -1,0 +1,157 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: url(../images/bg-intro-desktop.png);
+  background-size: cover;
+  background-position: center center;
+  background-color: hsl(0, 100%, 74%);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  line-height: 1.4;
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+// header
+header {
+  max-width: 600px;
+  padding: 3em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  h1 {
+    font-size: 3em;
+  }
+  p {
+    margin-top: 30px;
+    line-height: 1.8;
+  }
+}
+
+// inscription
+
+.inscription {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 600px;
+  padding-right: 30px;
+  .form {
+    background: #fff;
+    padding: 2em;
+    border-radius: 7px;
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    p {
+      color: hsl(246, 25%, 77%);
+      font-size: 0.7em;
+      text-align: center;
+      span {
+        color: hsl(0, 100%, 74%);
+      }
+    }
+  }
+}
+
+// Utilities
+.btn {
+  text-decoration: none;
+  text-align: center;
+  padding: 1em 2em;
+  margin-bottom: 30px;
+  color: #fff;
+  border-radius: 7px;
+  font-weight: 600;
+
+  transition: all 0.4s ease-in-out;
+}
+.cta {
+  text-decoration: none;
+  text-align: center;
+  padding: 1em 2em;
+  margin-bottom: 30px;
+  color: #fff;
+  background: hsl(248, 32%, 49%);
+  border-radius: 7px;
+  box-shadow: 0 10px 1px rgba(0, 0, 0, 0.2);
+  font-weight: 600;
+  span {
+    font-weight: 400;
+  }
+  transition: all 0.4s ease-in-out;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.btn-primary {
+  border: transparent;
+  background: hsl(154, 59%, 51%);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  font-weight: 400;
+}
+
+input {
+  padding: 1em 2em;
+  margin-bottom: 1.3em;
+  border: 1px hsl(246, 25%, 77%) solid;
+  border-radius: 4px;
+  outline: none;
+  font-weight: 600;
+}
+
+input:focus {
+  border: 1px hsl(249, 10%, 26%) solid;
+}
+
+.input-problem {
+  border: 2px hsl(0, 100%, 74%) solid !important;
+}
+
+.notgood {
+  display: none;
+  color: hsl(0, 100%, 74%);
+  text-align: right;
+  font-size: 0.8em;
+  transform: translateY(-15px);
+  position: relative;
+}
+
+.notgood:after {
+  content: url(../images/icon-error.svg);
+  position: absolute;
+  top: -36px;
+  right: 20px;
+  color: red;
+}
+
+@media (max-width: 930px) {
+  body {
+    display: unset;
+  }
+  .container {
+    flex-direction: column;
+  }
+  .inscription {
+    padding: 20px;
+    width: unset;
+  }
+}
